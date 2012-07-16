@@ -26,7 +26,7 @@ If deduplication doesn't find equal files, use "rollcut -d 1024 file.gzip" to cu
 
 4- Now you have your BIG files compressed, and with equal chunks of data being stored just once. If you want, you can send them to a remote location using rsync, or just another tool that knows about hard links.
 
-5- When you want your data again, you just do "copy /b *.rollcut   file.gzip" in windows or "cat *.rollcut  >  file.gzip" in another OS.
+5- When you want your data again, you just do "copy /b *.rollcut  file.gzip" in windows or "cat *.rollcut  >  file.gzip" in another OS.
 
 - How I am using it?
 
@@ -48,3 +48,20 @@ The solution came while reading about rsync (http://rsync.samba.org), and a rsyn
 I realized that I could try to cut every file using a similar technique than rgzip: by calculating a rolling hash over a window of some bytes, and cutting the file when the hash is equal to a 'magic' number.
 
 The result is that two similar files, usually are cut by the same places, creating chunks with a high probability of being shared between files.
+
+
+License: simply a BDS license.
+
+* Copyright (c) FerFebles <ferfebles {at} gmail>
+*
+* Permission to use, copy, modify, and distribute this software for any
+* purpose with or without fee is hereby granted, provided that the above
+* copyright notice and this permission notice appear in all copies.
+*
+* THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+* WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+* MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+* ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+* WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+* ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+* OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
