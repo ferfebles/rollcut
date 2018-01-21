@@ -30,11 +30,11 @@ If deduplication doesn't find equal files, use "rollcut -d 1024 file.gzip" to cu
 
 - How I am using it?
 
-I have some big databases, with only few changes every day. Each daily backup has to be send over the network to a remote location, but the files are too big for the available bandwidth.
+I have some big databases, with only few changes every day. Each daily backup has to be sent over the network to a remote location, but the files are too big for the available bandwidth.
 
 I store the backups of seven days as gzipped deduplicated chunks in a folder. This folder is sent every day over the network to a remote site using rsync.
 
-Once you have send a full day, the chunks of the next day that are hard linked with the previous ones, don't need to be send over the network again.
+Once you have sent a full day, the chunks of the next day that are hard linked with the previous ones, don't need to be sent over the network again.
 
 
 - How it works?
